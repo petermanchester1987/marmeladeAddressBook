@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { Fragment, useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import AddressContext from '../../context/address/addressContext';
@@ -7,12 +7,13 @@ import AddressContext from '../../context/address/addressContext';
 
 const AutoAddress = () => {
 
-
     //Bringing in context into the component
     const addressContext = useContext(AddressContext); 
 
      // Destructuring the context methods I need
     const { 
+        seeAuto,
+        hideAuto,
         addContact,
         name,
         address1,
@@ -22,6 +23,14 @@ const AutoAddress = () => {
         postcode,
         telephone,
         email,
+        setName,
+        setAddress1,
+        setAddress2,
+        setTown,
+        setCounty,
+        setPostcode,
+        setTelephone,
+        setEmail
 
     } = addressContext;
 
@@ -41,14 +50,7 @@ const AutoAddress = () => {
             postcode,
             telephone,
             email,
-            setName,
-            setAddress1,
-            setAddress2,
-            setTown,
-            setCounty,
-            setPostcode,
-            setTelephone,
-            setEmail
+            
             }
             addContact(createContact);
 
@@ -64,9 +66,11 @@ const AutoAddress = () => {
             setTelephone("");
             setEmail("");
 
+            hideAuto();
 
     }
 
+    if (seeAuto)
     return (
         <div>
             <form onSubmit={onSubmit} className="form">
@@ -150,6 +154,7 @@ const AutoAddress = () => {
             </form>
         </div>
     )
+    return <Fragment></Fragment>
 }
 
 export default AutoAddress;

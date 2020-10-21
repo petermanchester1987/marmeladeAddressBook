@@ -6,6 +6,7 @@ import {
     SEARCH_POSTCODE,
     SET_LOADING,
     SHOW_MANUAL,
+    SHOW_AUTO,
     DELETE_CONTACT,
     EDIT_CONTACT,
     SET_NAME,
@@ -19,7 +20,9 @@ import {
     SET_TELEPHONE,
     SET_ADDRESS,
     ADD_CONTACT,
-    GET_CONTACT
+    GET_CONTACT,
+    HIDE_MANUAL,
+    HIDE_AUTO
 
 } from '../constants';
 
@@ -70,6 +73,7 @@ const AddressState =  props => {
     ],
         loading: false,
         seeManual: false,
+        seeAuto: false,
     
     }
 
@@ -106,13 +110,13 @@ const AddressState =  props => {
         payload: postcode
      })
 
-     //set Line 1
-     const setLineOne = (lineOne) => dispatch({
+     //set Address Line 1
+     const setAddress1 = (lineOne) => dispatch({
          type: SET_LINE_ONE,
          payload: lineOne
      })
-     //set Line 2
-     const setLineTwo = (lineTwo) => dispatch({
+     //set Address Line 2
+     const setAddress2 = (lineTwo) => dispatch({
          type: SET_LINE_TWO,
          payload: lineTwo
      })
@@ -184,6 +188,12 @@ const AddressState =  props => {
 
     //show manual
     const showManual = () => dispatch({ type: SHOW_MANUAL });
+    //show Auto
+    const showAuto = () => dispatch({ type: SHOW_AUTO });
+    //hide manual
+    const hideManual = () => dispatch({ type: HIDE_MANUAL });
+    //hide Auto
+    const hideAuto = () => dispatch({ type: HIDE_AUTO });
 
     //we return the provider , this wraps our application and will pass 
     // on our data all around the application
@@ -203,13 +213,17 @@ const AddressState =  props => {
             contacts: state.contacts,
             loading: state.loading,
             seeManual: state.seeManual,
+            seeAuto: state.seeAuto,
             showManual,
+            showAuto,
+            hideAuto,
+            hideManual,
             searchPostcode,
             setLoading,
             setName,
             setPostcode,
-            setLineOne,
-            setLineTwo,
+            setAddress1,
+            setAddress2,
             setTown,
             setCounty,
             setTelephone,

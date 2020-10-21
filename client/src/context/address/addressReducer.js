@@ -2,6 +2,7 @@ import {
     SEARCH_POSTCODE,
     SET_LOADING,
     SHOW_MANUAL,
+    HIDE_MANUAL,
     DELETE_CONTACT,
     EDIT_CONTACT,
     GET_CONTACT,
@@ -15,7 +16,9 @@ import {
     SET_EMAIL,
     SET_TELEPHONE,
     SET_ADDRESS,
-    ADD_CONTACT
+    ADD_CONTACT,
+    SHOW_AUTO,
+    HIDE_AUTO
 
 } from '../constants';
 
@@ -148,6 +151,21 @@ export default (state, action) => {
                         return {
                             ...state,
                             seeManual: true
+                        }
+                    case HIDE_MANUAL:
+                        return {
+                            ...state,
+                            seeManual: false,
+                        }
+                    case SHOW_AUTO:
+                        return {
+                            ...state,
+                            seeAuto: true
+                        }
+                    case HIDE_AUTO:
+                        return {
+                            ...state,
+                            seeAuto: false
                         }
                 default: 
                 return state;

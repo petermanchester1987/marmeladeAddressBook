@@ -10,6 +10,7 @@ import AddressSelector from './components/addAddress/AddressSelector';
 import AddAddress from './components/addAddress/AddAddress';
 import Navbar from './components/layout/Navbar';
 import AddressList from './components/showAddress/AddressList';
+import AutoAddress from './components/addAddress/AutoAddress';
 
 
 const App = () => {
@@ -26,8 +27,8 @@ const App = () => {
               <AddPostcode />
 
               <AddressSelector />
-
               <AddAddress />
+              <AutoAddress />
             </div>
             <div className="container">
               <AddressList />

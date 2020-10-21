@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { Fragment, useContext, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import AddressContext from '../../context/address/addressContext';
@@ -21,7 +21,8 @@ const AddAddress = () => {
 
      // Destructuring the context methods I need
     const { 
-        addContact
+        addContact,
+        seeManual
     } = addressContext;
 
 
@@ -58,6 +59,7 @@ const AddAddress = () => {
 
     }
 
+    if(seeManual)
     return (
         <div>
             <form onSubmit={onSubmit} className="form">
@@ -141,6 +143,7 @@ const AddAddress = () => {
             </form>
         </div>
     )
+    return <Fragment></Fragment>
 }
 
 export default AddAddress

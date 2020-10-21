@@ -12,7 +12,8 @@ const AddPostcode = () => {
         searchPostcode,
         setPostcode,
         searchAddress,
-        postcodes
+        postcodes,
+        showAuto,
     } = addressContext;
 
    /* using useCallback hook to debounce the postcode search with postcodes.io
@@ -37,6 +38,7 @@ const AddPostcode = () => {
       const searchablePostcode = nextValue.replace(/\s+/g, '')
 
       debounceAddressFunc(searchablePostcode);
+      showAuto();
     }
 
     return (
