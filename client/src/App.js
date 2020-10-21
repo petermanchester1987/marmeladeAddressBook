@@ -4,6 +4,7 @@ import './App.css';
 import AddPostcode from './components/addAddress/AddPostcode';
 import AddAddress from './components/addAddress/AddAddress';
 import Navbar from './components/layout/Navbar';
+import AddressList from './components/showAddress/AddressList';
 
 
 const App = () => {
