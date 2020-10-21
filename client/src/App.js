@@ -13,6 +13,8 @@ import AddressList from './components/showAddress/AddressList';
 
 
 const App = () => {
+
+
   return (
     /* Wrap everything in a state provider. */
     
@@ -22,7 +24,9 @@ const App = () => {
             <div className="container">
               <h1>Add An Address</h1>
               <AddPostcode />
+
               <AddressSelector />
+
               <AddAddress />
             </div>
             <div className="container">

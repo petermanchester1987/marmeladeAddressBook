@@ -11,10 +11,11 @@ const AddPostcode = () => {
     const { 
         searchPostcode,
         setPostcode,
+        searchAddress,
         postcodes
     } = addressContext;
 
-   /* using useCallback hook to debounce the postcode search
+   /* using useCallback hook to debounce the postcode search with postcodes.io
     Didn't realise until this that it was slightly different to debounce 
     or throttle a functional component than a class based (because each 
     render it has a new state ) */
@@ -22,10 +23,20 @@ const AddPostcode = () => {
     const debounceFunc = 
     useCallback(debounce(1000, (nextValue) => searchPostcode(nextValue)),[]);
 
+    //Decided to do the same thing to send an API call to getaddress.io
+    // thought I should use both 
+    const debounceAddressFunc = 
+    useCallback(debounce(3000, (searchablePostcode) => searchAddress(searchablePostcode)),[]);
+
     const handlePostcodeChange = e => {
       const nextValue = e.target.value;
       debounceFunc(nextValue);
       setPostcode(nextValue);
+
+      //getting rid of annoying postcodes.io space
+      const searchablePostcode = nextValue.replace(/\s+/g, '')
+
+      debounceAddressFunc(searchablePostcode);
     }
 
     return (
