@@ -1,10 +1,22 @@
-import React from 'react'
-import Address from './Address'
+import React, { useContext } from 'react';
+import Address from './Address';
+import AddressContext from '../../context/address/addressContext';
+
+//pull our global state in
+
 
 const AddressList = () => {
+
+    const { contacts } = useContext(AddressContext);
+  
     return (
-        <div>
-            <Address />
+        <div> 
+            {
+                contacts.map(contact => (
+                    <Address contact={contact} key={contact.id} />
+                ))
+
+            }
         </div>
     )
 }

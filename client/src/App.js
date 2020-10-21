@@ -1,6 +1,10 @@
 import React from 'react';
 import { Fragment } from 'react';
 import './App.css';
+
+// bringing in state wrapper from context
+import AddressState from './context/address/AddressState';
+
 import AddPostcode from './components/addAddress/AddPostcode';
 import AddressSelector from './components/addAddress/AddressSelector';
 import AddAddress from './components/addAddress/AddAddress';
@@ -10,18 +14,22 @@ import AddressList from './components/showAddress/AddressList';
 
 const App = () => {
   return (
-    <Fragment>
-      <Navbar />
-      <div className="container">
-        <h1>Add An Address</h1>
-        <AddPostcode />
-        <AddressSelector />
-        <AddAddress />
-      </div>
-      <div className="container">
-        <AddressList />
-      </div>
-    </Fragment>
+    /* Wrap everything in a state provider. */
+    
+       <AddressState>
+          <Fragment>
+            <Navbar />
+            <div className="container">
+              <h1>Add An Address</h1>
+              <AddPostcode />
+              <AddressSelector />
+              <AddAddress />
+            </div>
+            <div className="container">
+              <AddressList />
+            </div>
+          </Fragment>
+        </AddressState>
   );
 }
 

@@ -1,8 +1,8 @@
 import { createContext } from 'react';
 
-const addressContext = createContext();
+const AddressContext = createContext();
 
-export default addressContext;
+export default AddressContext;
 
 /* Added the Context API because I wanted to practise using context and hooks 
 rather than Redux. 

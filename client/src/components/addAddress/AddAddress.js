@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 const AddAddress = () => {
     const [name, setName ] = useState("");
-    const [address1, setAddress1 ] = useState("");
-    const [address2, setAddress2 ] = useState("");
+    const [address1, setAddress1] = useState("");
+    const [address2, setAddress2] = useState("");
     const [town, setTown ] = useState("");
     const [county, setCounty ] = useState("");
     const [postcode, setPostcode] = useState("");
@@ -18,7 +18,7 @@ const AddAddress = () => {
                     name="name"
                     value={name}
                     placeholder="Enter Address Name"
-                    onChange={e => setName(e.target.value)}
+                    onChange={(e) => setName(e.target.value)}
                 />
 
                 <input
@@ -26,7 +26,7 @@ const AddAddress = () => {
                     name="address1"
                     value={address1}
                     placeholder="Enter Address Line 1"
-                    onChange={e => setAddress1(e.target.value)}
+                    onChange={(e) => setAddress1(e.target.value)}
                     />
 
                 <input
@@ -34,7 +34,7 @@ const AddAddress = () => {
                     name="address2"
                     value={address2}
                     placeholder="Enter Address Line 2"
-                    onChange={e => setAddress2(e.target.value)}
+                    onChange={(e) => setAddress2(e.target.value)}
 
                 />
 
@@ -43,7 +43,7 @@ const AddAddress = () => {
                     name="town"
                     value={town}
                     placeholder="Enter Town/City"
-                    onChange={e => setTown(e.target.value)}
+                    onChange={(e) => setTown(e.target.value)}
 
                 />
 
@@ -52,7 +52,7 @@ const AddAddress = () => {
                     name="county"
                     value={county}
                     placeholder="Enter County"
-                    onChange={e => setCounty(e.target.value)}
+                    onChange={(e) => setCounty(e.target.value)}
 
 
                 />
@@ -62,7 +62,7 @@ const AddAddress = () => {
                     name="postcode"
                     value={postcode}
                     placeholder="Enter Postcode"
-                    onChange={e => setPostcode(e.target.value)}
+                    onChange={(e) => setPostcode(e.target.value)}
 
                 />
                 
@@ -71,7 +71,7 @@ const AddAddress = () => {
                     name="telephone"
                     value={telephone}
                     placeholder="Add Telephone"
-                    onChange={e => setTelephone(e.target.value)}
+                    onChange={(e) => setTelephone(e.target.value)}
 
                 />
 
@@ -80,7 +80,7 @@ const AddAddress = () => {
                     name="email"
                     value={email}
                     placeholder="Add Email"
-                    onChange={e => setEmail(e.target.value)}
+                    onChange={(e) => setEmail(e.target.value)}
 
                 />
                 
