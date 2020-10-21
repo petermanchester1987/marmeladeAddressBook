@@ -9,6 +9,7 @@ import {
     SET_NAME,
     SET_POSTCODE,
     SEARCH_ADDRESS,
+    CLEAR_ADDRESSES,
     SET_LINE_ONE,
     SET_COUNTY,
     SET_TOWN,
@@ -18,7 +19,9 @@ import {
     SET_ADDRESS,
     ADD_CONTACT,
     SHOW_AUTO,
-    HIDE_AUTO
+    HIDE_AUTO,
+    HIDE_ADDRESS_SELECTOR,
+    SHOW_ADDRESS_SELECTOR
 
 } from '../constants';
 
@@ -39,6 +42,13 @@ export default (state, action) => {
                      showInfo: true,
                      addresses: action.payload.addresses,
                  }
+
+            case CLEAR_ADDRESSES:
+                return {
+                    ...state,
+                    showInfo: false,
+                    addresses: []
+                }
 
       // I Realised after the fact that I could have written less code if I had 
       // repeated some of these reducers for more than one action
@@ -167,6 +177,18 @@ export default (state, action) => {
                             ...state,
                             seeAuto: false
                         }
+                    case SHOW_ADDRESS_SELECTOR:
+                        return {
+                            ...state,
+                            seeAddressSelector: true
+                        }
+                    case HIDE_ADDRESS_SELECTOR:
+                        return {
+                            ...state,
+                            seeAddressSelector: false
+                        }
+
+                    
                 default: 
                 return state;
             }

@@ -1,6 +1,7 @@
 import React, { useCallback, useContext } from 'react';
 import AddressContext from '../../context/address/addressContext';
 import { debounce } from 'throttle-debounce';
+import { SHOW_ADDRESS_SELECTOR } from '../../context/constants';
 
 const AddPostcode = () => {
 
@@ -14,6 +15,7 @@ const AddPostcode = () => {
         searchAddress,
         postcodes,
         showAuto,
+        showAddressSelector
     } = addressContext;
 
    /* using useCallback hook to debounce the postcode search with postcodes.io
@@ -33,6 +35,7 @@ const AddPostcode = () => {
       const nextValue = e.target.value;
       debounceFunc(nextValue);
       setPostcode(nextValue);
+      showAddressSelector();
 
       //getting rid of annoying postcodes.io space
       const searchablePostcode = nextValue.replace(/\s+/g, '')

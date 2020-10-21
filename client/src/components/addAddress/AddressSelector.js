@@ -7,7 +7,8 @@ const AddressSelector = () => {
 
     const {
       addresses,
-      setAddress
+      setAddress,
+      seeAddressSelector
     } = addressContext;
 
     const handleAddressSelect = e => {
@@ -15,7 +16,7 @@ const AddressSelector = () => {
         setAddress(addressArray);
       }
 
-    if(addresses.length > 0)
+    if(seeAddressSelector)
     return (
         <div>
             <label htmlFor="address">Choose The Address</label>

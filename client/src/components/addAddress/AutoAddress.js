@@ -30,7 +30,9 @@ const AutoAddress = () => {
         setCounty,
         setPostcode,
         setTelephone,
-        setEmail
+        setEmail,
+        clearAddresses,
+        hideAddressSelector
 
     } = addressContext;
 
@@ -65,8 +67,10 @@ const AutoAddress = () => {
             setPostcode("");
             setTelephone("");
             setEmail("");
+            clearAddresses();
 
             hideAuto();
+            hideAddressSelector();
 
     }
 

@@ -11,6 +11,7 @@ export const DELETE_CONTACT = 'DELETE_CONTACT';
 export const EDIT_CONTACT = 'EDIT_CONTACT';
 export const SET_POSTCODE = 'SET_POSTCODE';
 export const SEARCH_ADDRESS = 'SEARCH_ADDRESS';
+export const CLEAR_ADDRESSES = 'CLEAR_ADDRESSES';
 export const SET_LINE_ONE = 'SET_LINE_ONE';
 export const SET_LINE_TWO = 'SET_LINE_TWO';
 export const SET_TOWN = 'SET_TOWN';
@@ -19,6 +20,8 @@ export const SET_EMAIL = 'SET_EMAIL';
 export const SET_TELEPHONE = 'SET_TELEPHONE';
 export const SET_ADDRESS = 'SET_ADDRESS';
 export const ADD_CONTACT = 'ADD_CONTACT';
+export const SHOW_ADDRESS_SELECTOR = 'SHOW_ADDRESS_SELECTOR';
+export const HIDE_ADDRESS_SELECTOR = 'HIDE_ADDRESS_SELECTOR';
 
 
 

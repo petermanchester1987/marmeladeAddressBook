@@ -22,7 +22,10 @@ import {
     ADD_CONTACT,
     GET_CONTACT,
     HIDE_MANUAL,
-    HIDE_AUTO
+    HIDE_AUTO,
+    CLEAR_ADDRESSES,
+    SHOW_ADDRESS_SELECTOR,
+    HIDE_ADDRESS_SELECTOR
 
 } from '../constants';
 
@@ -72,6 +75,7 @@ const AddressState =  props => {
         },
     ],
         loading: false,
+        seeAddressSelector: false,
         seeManual: false,
         seeAuto: false,
     
@@ -160,6 +164,12 @@ const AddressState =  props => {
             })
     }
 
+    // Clear addresses
+
+    const clearAddresses = () => dispatch({
+        type: CLEAR_ADDRESSES
+    })
+
     // add Contact
     const addContact = (contact) => dispatch({
         type: ADD_CONTACT,
@@ -190,10 +200,16 @@ const AddressState =  props => {
     const showManual = () => dispatch({ type: SHOW_MANUAL });
     //show Auto
     const showAuto = () => dispatch({ type: SHOW_AUTO });
+    //show AddressSelector
+    const showAddressSelector = () => dispatch({ type: SHOW_ADDRESS_SELECTOR });
+
+
     //hide manual
     const hideManual = () => dispatch({ type: HIDE_MANUAL });
     //hide Auto
     const hideAuto = () => dispatch({ type: HIDE_AUTO });
+    //hide AddressSelector
+    const hideAddressSelector = () => dispatch({ type: HIDE_ADDRESS_SELECTOR });
 
     //we return the provider , this wraps our application and will pass 
     // on our data all around the application
@@ -214,6 +230,9 @@ const AddressState =  props => {
             loading: state.loading,
             seeManual: state.seeManual,
             seeAuto: state.seeAuto,
+            seeAddressSelector: state.seeAddressSelector,
+            showAddressSelector,
+            hideAddressSelector,
             showManual,
             showAuto,
             hideAuto,
@@ -233,7 +252,8 @@ const AddressState =  props => {
             addContact,
             getContact,
             deleteContact,
-            editContact
+            editContact,
+            clearAddresses
 
 
         }}>
