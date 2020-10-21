@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
 
 const AddAddress = () => {
     const [name, setName ] = useState("");
@@ -10,9 +12,28 @@ const AddAddress = () => {
     const [telephone, setTelephone] = useState("");
     const [email, setEmail] = useState("");
 
+    const onSubmit = () => {
+            // stop default form submission
+            e.preventDefault();
+             //creating a contact object which I can then add to the array
+            const createContact = {
+            // I brought in the uuid module for easy id creation
+            id: uuidv4(),
+            name,
+            address1,
+            address2,
+            town,
+            county,
+            postcode,
+            telephone,
+            email
+            }
+            addContact(createContact);
+    }
+
     return (
         <div>
-            <form action="" className="form">
+            <form onSubmit={onSubmit} className="form">
                 <input
                     type="text"
                     name="name"
@@ -89,6 +110,7 @@ const AddAddress = () => {
                     className="btn btn-dark btn-block"
                     value="Submit"
                  />
+
             </form>
         </div>
     )
