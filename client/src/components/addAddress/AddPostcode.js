@@ -10,6 +10,7 @@ const AddPostcode = () => {
 
      // Destructuring the context
     const { 
+        postcode,
         searchPostcode,
         setPostcode,
         searchAddress,
@@ -50,6 +51,7 @@ const AddPostcode = () => {
           type="text"
           name="quickform"
           list="postcode-array"
+          value={postcode}
           placeholder="Enter Postcode"
           onChange={e => handlePostcodeChange(e)}
         /> 
