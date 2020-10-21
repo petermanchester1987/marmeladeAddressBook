@@ -1,7 +1,6 @@
 import React, { useCallback, useContext } from 'react';
 import AddressContext from '../../context/address/addressContext';
 import { debounce } from 'throttle-debounce';
-import { SHOW_ADDRESS_SELECTOR } from '../../context/constants';
 
 const AddPostcode = () => {
 
