@@ -1,11 +1,20 @@
 import React from 'react';
+import { Fragment } from 'react';
 import './App.css';
+import AddPostcode from './components/address/AddPostcode';
+import AddAddress from './components/address/AddAddress';
+import Navbar from './components/layout/Navbar';
+
 
 const App = () => {
   return (
-    <div className="App">
-      hello
-    </div>
+    <Fragment>
+      <Navbar />
+      <div className="container">
+        <AddPostcode />
+        <AddAddress />
+      </div>
+    </Fragment>
   );
 }
 
