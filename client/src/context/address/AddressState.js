@@ -5,7 +5,6 @@ import addressReducer from './addressReducer';
 import { 
     SEARCH_POSTCODE,
     SET_LOADING,
-    SHOW_MANUAL,
     SHOW_AUTO,
     DELETE_CONTACT,
     EDIT_CONTACT,
@@ -20,8 +19,6 @@ import {
     SET_TELEPHONE,
     SET_ADDRESS,
     ADD_CONTACT,
-    GET_CONTACT,
-    HIDE_MANUAL,
     HIDE_AUTO,
     CLEAR_ADDRESSES,
     SHOW_ADDRESS_SELECTOR,
@@ -54,19 +51,19 @@ const AddressState =  props => {
         email: "",
         contacts: [{
             id: "1",
-        name: "Hard Coded",
-        address1: "1 Hardcoded st",
-        address2: "2 Hardcoded building",
-        town: "Manchester",
-        county: "Greater Manchester",
-        postcode: "M11 111",
-        telephone: "1234567",
-        email: "test@gmail.com",
+        name: "Peter Manchester",
+        address1: "Relocated from Manchester",
+        address2: "House Somewhere Near Marmelade",
+        town: "Peterborough",
+        county: "Cambridgeshire",
+        postcode: "PE3 8AF",
+        telephone: "07787571686",
+        email: "petermanchester1987@gmail.com",
         }, 
     ],
         loading: false,
         seeAddressSelector: false,
-        seeManual: false,
+        //seeManual: false,
         seeAuto: false,
     
     }
@@ -166,16 +163,10 @@ const AddressState =  props => {
         payload: contact
     })
 
-    //getcontacts
-    const getContact = (postcode) => dispatch({
-        type: GET_CONTACT,
-        payload: postcode
-    })
-
     //edit contact
-    const editContact = (contact) => dispatch({ 
+    const editContact = (id) => dispatch({ 
         type: EDIT_CONTACT,
-        payload: contact
+        payload: id
     })
     //delete contact
     const deleteContact = (id) => dispatch({ 
@@ -186,19 +177,14 @@ const AddressState =  props => {
     //set loading
     const setLoading = () => dispatch({ type: SET_LOADING });
 
-    //show manual
-    const showManual = () => dispatch({ type: SHOW_MANUAL });
-    //show Auto
+    //show Auto address input
     const showAuto = () => dispatch({ type: SHOW_AUTO });
-    //show AddressSelector
+    //show AddressSelector dropdown
     const showAddressSelector = () => dispatch({ type: SHOW_ADDRESS_SELECTOR });
 
-
-    //hide manual
-    const hideManual = () => dispatch({ type: HIDE_MANUAL });
-    //hide Auto
+    //hide Auto  address input
     const hideAuto = () => dispatch({ type: HIDE_AUTO });
-    //hide AddressSelector
+    //hide AddressSelector dropdown
     const hideAddressSelector = () => dispatch({ type: HIDE_ADDRESS_SELECTOR });
 
     //we return the provider , this wraps our application and will pass 
@@ -218,15 +204,12 @@ const AddressState =  props => {
             email: state.email,
             contacts: state.contacts,
             loading: state.loading,
-            seeManual: state.seeManual,
             seeAuto: state.seeAuto,
             seeAddressSelector: state.seeAddressSelector,
             showAddressSelector,
             hideAddressSelector,
-            showManual,
             showAuto,
             hideAuto,
-            hideManual,
             searchPostcode,
             setLoading,
             setName,
@@ -240,7 +223,6 @@ const AddressState =  props => {
             setAddress,
             searchAddress,
             addContact,
-            getContact,
             deleteContact,
             editContact,
             clearAddresses

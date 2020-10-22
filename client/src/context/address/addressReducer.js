@@ -1,11 +1,8 @@
 import { 
     SEARCH_POSTCODE,
     SET_LOADING,
-    SHOW_MANUAL,
-    HIDE_MANUAL,
     DELETE_CONTACT,
     EDIT_CONTACT,
-    GET_CONTACT,
     SET_NAME,
     SET_POSTCODE,
     SEARCH_ADDRESS,
@@ -128,13 +125,6 @@ export default (state, action) => {
                         loading: false,
                     }
 
-                case GET_CONTACT:
-                    return {
-                        ...state,
-                        contacts: state.contacts,
-                        loading: false,
-                    }
-
                 case SET_LOADING:
                     return {
                         ...state,
@@ -144,8 +134,18 @@ export default (state, action) => {
                     case EDIT_CONTACT:
                         return {
                             ...state,
-                            contacts: [action.payload, ...state.contacts],
+                            id: action.payload.id,
+                            name: action.payload.name,
+                            address1: action.payload.address1,
+                            address2: action.payload.address2,
+                            town: action.payload.town,
+                            county: action.payload.county,
+                            postcode: action.payload.postcode,
+                            email: action.payload.email,
+                            telephone: action.payload.telephone,
+                            contacts: state.contacts.filter((contact) => contact.id !== action.payload.id),
                             loading: false,
+                            seeAuto: true,
                         }
 
                     // Filter through the contacts to remove the one with the same id
@@ -157,16 +157,6 @@ export default (state, action) => {
                         contacts: state.contacts.filter((contact) => contact.id !== action.payload),
                         loading: false
                     }
-                    case SHOW_MANUAL:
-                        return {
-                            ...state,
-                            seeManual: true
-                        }
-                    case HIDE_MANUAL:
-                        return {
-                            ...state,
-                            seeManual: false,
-                        }
                     case SHOW_AUTO:
                         return {
                             ...state,
