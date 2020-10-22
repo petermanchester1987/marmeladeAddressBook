@@ -1,7 +1,8 @@
 import React, { useReducer } from 'react';
 import axios from 'axios';
-import addressContext from './addressContext';
+import AddressContext from './AddressContext';
 import addressReducer from './addressReducer';
+
 import { 
     SEARCH_POSTCODE,
     SET_LOADING,
@@ -189,7 +190,7 @@ const AddressState =  props => {
 
     //we return the provider , this wraps our application and will pass 
     // on our data all around the application
-    return <addressContext.Provider
+    return <AddressContext.Provider
         value={{
             id: state.id,
             name: state.name,
@@ -230,7 +231,7 @@ const AddressState =  props => {
 
         }}>
             {props.children}
-        </addressContext.Provider>
+        </AddressContext.Provider>
 }
 
 export default AddressState;

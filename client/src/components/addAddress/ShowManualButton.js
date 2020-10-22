@@ -1,5 +1,5 @@
 import React, { Fragment, useContext } from 'react';
-import AddressContext from '../../context/address/addressContext';
+import AddressContext from '../../context/address/AddressContext';
 
 
 const ShowManualButton = () => {
