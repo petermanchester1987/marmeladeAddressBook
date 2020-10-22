@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import axios from 'axios';
-import AddressContext from './addressContext';
+import AddressContext from './AddressContext';
 import addressReducer from './addressReducer';
 
 import { 

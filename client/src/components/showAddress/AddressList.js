@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Address from './Address';
-import AddressContext from '../../context/address/addressContext';
+import AddressContext from '../../context/address/AddressContext';
 
 //pull our global state in
 
