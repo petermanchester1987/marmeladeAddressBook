@@ -16,3 +16,5 @@ I'm certainly keen for any feedback I can get at all, as I would love to learn f
 Many Thanks
 
 Peter
+
+Postcodes for testing: KW1 4YT and TR19 7AA.
