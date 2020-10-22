@@ -51,7 +51,7 @@ const AddPostcode = () => {
           name="quickform"
           list="postcode-array"
           value={postcode}
-          placeholder="Enter Postcode"
+          placeholder="Enter Postcode For Autofill"
           onChange={e => handlePostcodeChange(e)}
         /> 
          {postcodes.result && (

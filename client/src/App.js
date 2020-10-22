@@ -7,10 +7,11 @@ import AddressState from './context/address/AddressState';
 
 import AddPostcode from './components/addAddress/AddPostcode';
 import AddressSelector from './components/addAddress/AddressSelector';
-import AddAddress from './components/addAddress/AddAddress';
 import Navbar from './components/layout/Navbar';
 import AddressList from './components/showAddress/AddressList';
 import AutoAddress from './components/addAddress/AutoAddress';
+import ShowManualButton from './components/addAddress/ShowManualButton';
+
 
 
 const App = () => {
@@ -25,9 +26,8 @@ const App = () => {
             <div className="container">
               <h1>Add An Address</h1>
               <AddPostcode />
-
+              <ShowManualButton />
               <AddressSelector />
-              <AddAddress />
               <AutoAddress />
             </div>
             <div className="container">
