@@ -53,7 +53,7 @@ const AddressState =  props => {
             id: "1",
         name: "Peter Manchester",
         address1: "Relocated from Manchester",
-        address2: "House Somewhere Near Marmelade",
+        address2: "House Somewhere Near Marmalade",
         town: "Peterborough",
         county: "Cambridgeshire",
         postcode: "PE3 8AF",

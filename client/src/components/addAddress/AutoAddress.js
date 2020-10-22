@@ -84,6 +84,7 @@ const AutoAddress = () => {
                     value={name}
                     placeholder="Enter Address Name"
                     onChange={(e) => setName(e.target.value)}
+                    required
                 />
 
                 <input
