@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
-//import { Link } from "react-router-dom";
+import marmelade from './marmalade_mlogo-9d6497c863288240dba11c7ab0836aaa.svg';
+
 
 
 
@@ -8,24 +9,19 @@ const Navbar = ({ icon, title }) => {
 
     return (
         <nav className="navbar bg-primary">
-        <h1>
-            <i className={icon}></i> {title}
-        </h1>
-        {/* <ul>
-          <li>
-            <Link to="/">Add Address</Link>
-          </li>
-  
-          <li>
-            <Link to="/addresses">Your Addresses</Link>
-          </li>
-        </ul> */}
+          <div className="grid-2">
+            <img className="" src={marmelade} alt="marmelade-logo"/>
+            <h1>
+                <i className={icon}></i> {title}
+            </h1>
+        </div>
+       
       </nav>
     )
 }
 
 Navbar.defaultProps = {
-    title: "marmalade Address Book",
+    title: "Address Book",
     icon: "fas fa-address-card",
   };
 

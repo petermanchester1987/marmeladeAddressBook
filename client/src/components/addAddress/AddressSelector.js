@@ -19,7 +19,7 @@ const AddressSelector = () => {
     if(seeAddressSelector)
     return (
         <div>
-            <label htmlFor="address">Choose The Address</label>
+            <label htmlFor="address">Choose The Address From The List</label>
               <input onSelect={e => handleAddressSelect(e)} type="data-list" name="address" list="address-array"></input>
                 <datalist id="address-array">
                     {addresses.map((address) => {
