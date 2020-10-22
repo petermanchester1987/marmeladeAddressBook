@@ -7,8 +7,8 @@ const AddressSelector = () => {
 
     const {
       addresses,
+      address,
       setAddress,
-      seeAddressSelector
     } = addressContext;
 
     const handleAddressSelect = e => {
@@ -16,11 +16,11 @@ const AddressSelector = () => {
         setAddress(addressArray);
       }
 
-    if(seeAddressSelector)
+    if(addresses.length > 0)
     return (
         <div>
             <label htmlFor="address">Choose The Address From The List</label>
-              <input onSelect={e => handleAddressSelect(e)} type="data-list" name="address" list="address-array"></input>
+              <input onSelect={e => handleAddressSelect(e)} value={address} type="data-list" name="address" list="address-array"></input>
                 <datalist id="address-array">
                     {addresses.map((address) => {
                     return (
