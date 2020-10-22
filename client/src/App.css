@@ -306,6 +306,9 @@ img {
 .round-img {
   border-radius: 50%;
 }
+.round-btn {
+  border-radius: 5px;
+}
 
 /* Forms */
 input {

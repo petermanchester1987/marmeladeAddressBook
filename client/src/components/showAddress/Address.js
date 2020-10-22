@@ -32,8 +32,8 @@ const Address = ({ contact }) => {
                             
                             
                         <div className="grid-2">   
-                            <button onClick={e => editContact(contact)} className="btn-light p-1 m-1"><i className="fas fa-edit x2"></i></button>
-                            <button onClick={e => deleteContact(id)} className="btn-danger p-1 m-1"><i className="fas fa-times x2"></i></button>
+                            <button onClick={e => editContact(contact)} className="btn-dark round-btn p m-1"><i className="fas fa-edit x2"></i></button>
+                            <button onClick={e => deleteContact(id)} className="btn-danger round-btn p m-1"><i className="fas fa-times x2"></i></button>
                         </div> 
                 </div>
 
